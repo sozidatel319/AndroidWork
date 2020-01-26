@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GitHubUsersTest</string>
+    <string name="general_retry">Retry</string>
+</resources>
