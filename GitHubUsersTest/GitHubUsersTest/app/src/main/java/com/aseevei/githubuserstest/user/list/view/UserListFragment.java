@@ -67,6 +67,7 @@ public class UserListFragment extends Fragment implements UserListView {
 
     @Override
     public void showErrorMessage(String errorMessage) {
+        errorMessage = "Ошибка соединения";
         Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
     }
 
