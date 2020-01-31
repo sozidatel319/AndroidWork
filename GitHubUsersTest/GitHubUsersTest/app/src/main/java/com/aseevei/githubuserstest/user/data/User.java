@@ -8,12 +8,40 @@ public final class User {
   private String name;
   private String avatarUrl;
   private String webLink;
+  private String location;
+  private String email;
+  private String blog;
+
 
   public User(long id, String name, String avatarUrl, String webLink) {
     this.id = id;
     this.name = name;
     this.avatarUrl = avatarUrl;
     this.webLink = webLink;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getBlog() {
+    return blog;
+  }
+
+  public void setBlog(String blog) {
+    this.blog = blog;
   }
 
   public long getId() {

@@ -34,17 +34,93 @@
               <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
               <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="aseevei" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="aseevei" type="462c0819:PsiDirectoryNode" />
+              <item name="githubuserstest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitHubUsersTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHubUsersTest" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="aseevei" type="462c0819:PsiDirectoryNode" />
+              <item name="githubuserstest" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GitHubUsersTest" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -85,7 +161,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />

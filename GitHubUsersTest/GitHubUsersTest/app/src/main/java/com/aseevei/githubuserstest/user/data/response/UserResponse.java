@@ -11,6 +11,24 @@ public class UserResponse {
     private String avatarUrl;
     @SerializedName("url")
     private String webLink;
+    @SerializedName("location")
+    private String location;
+    @SerializedName("email")
+    private String email;
+    @SerializedName("blog")
+    private String blog;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getBlog() {
+        return blog;
+    }
 
     public String getName() {
         return name;

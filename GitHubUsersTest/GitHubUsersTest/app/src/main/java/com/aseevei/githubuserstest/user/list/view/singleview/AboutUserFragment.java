@@ -1,4 +1,4 @@
-package com.aseevei.githubuserstest.user.list.view;
+package com.aseevei.githubuserstest.user.list.view.singleview;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
-import com.aseevei.githubuserstest.user.list.presentation.UserListPresenter;
-import java.util.List;
+import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleListPresenter;
+import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleUIModel;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class UserListFragment extends Fragment implements UserListView {
+public class AboutUserFragment extends Fragment implements UserSingleView {
 
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
@@ -31,13 +31,19 @@ public class UserListFragment extends Fragment implements UserListView {
     Button retryButton;
 
     private Unbinder unbinder;
-    private UserAdapter adapter;
-    private UserListPresenter presenter;
+    private UserSingleListPresenter presenter;
+    private UserSingleAdapter adapter;
+    private String username;
+
+    public AboutUserFragment(String username){
+        this.username = username;
+    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = ((App) getActivity().getApplication()).getUserListPresenter();
+        presenter = ((App) getActivity().getApplication()).getUserSingleListPresenter(username);
     }
 
     @Override
@@ -45,7 +51,7 @@ public class UserListFragment extends Fragment implements UserListView {
         View view = inflater.inflate(R.layout.fragment_user_list, container, false);
         unbinder = ButterKnife.bind(this, view);
         retryButton.setOnClickListener(button -> presenter.onRetryButtonClicked());
-        adapter = new UserAdapter();
+        adapter = new UserSingleAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -56,8 +62,8 @@ public class UserListFragment extends Fragment implements UserListView {
     }
 
     @Override
-    public void showUserList(List userList) {
-        adapter.addUsers(userList);
+    public void showUserList(UserSingleUIModel user) {
+        adapter.addUsers(user);
     }
 
     @Override
