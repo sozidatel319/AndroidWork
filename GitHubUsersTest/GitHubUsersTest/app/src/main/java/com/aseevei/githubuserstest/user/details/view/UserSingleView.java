@@ -1,6 +1,6 @@
-package com.aseevei.githubuserstest.user.list.view.singleview;
+package com.aseevei.githubuserstest.user.details.view;
 
-import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleUIModel;
+import com.aseevei.githubuserstest.user.details.presentation.UserSingleUIModel;
 
 public interface UserSingleView {
 

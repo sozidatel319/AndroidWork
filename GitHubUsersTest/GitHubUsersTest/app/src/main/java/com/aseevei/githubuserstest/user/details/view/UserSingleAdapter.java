@@ -1,4 +1,4 @@
-package com.aseevei.githubuserstest.user.list.view.singleview;
+package com.aseevei.githubuserstest.user.details.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
-import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleUIModel;
+import com.aseevei.githubuserstest.user.details.presentation.UserSingleUIModel;
 import com.aseevei.githubuserstest.user.list.view.ChangeView;
 import com.aseevei.githubuserstest.user.list.view.ViewPresenter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
 
 public class UserSingleAdapter extends RecyclerView.Adapter<UserSingleAdapter.UserViewHolder> {
@@ -72,10 +72,8 @@ public class UserSingleAdapter extends RecyclerView.Adapter<UserSingleAdapter.Us
             email = itemView.findViewById(R.id.email);
             blog = itemView.findViewById(R.id.blog);
 
-            itemView.setOnClickListener(v -> {
-                String s = name.getText().toString();
-                changeView.changeFragment(new AboutUserFragment(s));
-            });
+            itemView.setOnClickListener(v ->
+                    changeView.changeFragment(AboutUserFragment.newInstance(name.getText().toString())));
         }
     }
 }

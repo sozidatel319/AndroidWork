@@ -6,9 +6,13 @@ import java.util.List;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface GitHubService {
 
     @GET("/users")
     Single<List<UserResponse>> getUsers();
+
+    @GET("users/{username}")
+    Single<UserResponse> getUser(@Path("username") String username);
 }

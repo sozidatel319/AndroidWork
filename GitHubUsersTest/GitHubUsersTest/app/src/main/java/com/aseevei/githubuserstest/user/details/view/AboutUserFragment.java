@@ -1,4 +1,4 @@
-package com.aseevei.githubuserstest.user.list.view.singleview;
+package com.aseevei.githubuserstest.user.details.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,19 +7,24 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
-import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleListPresenter;
-import com.aseevei.githubuserstest.user.list.presentation.singlepresentation.UserSingleUIModel;
+import com.aseevei.githubuserstest.user.details.presentation.UserSingleListPresenter;
+import com.aseevei.githubuserstest.user.details.presentation.UserSingleUIModel;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class AboutUserFragment extends Fragment implements UserSingleView {
+
+    private static final String USER_KEY = "USER_KEY";
 
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
@@ -35,14 +40,20 @@ public class AboutUserFragment extends Fragment implements UserSingleView {
     private UserSingleAdapter adapter;
     private String username;
 
-    public AboutUserFragment(String username){
-        this.username = username;
-    }
+    public static AboutUserFragment newInstance(String username) {
 
+        Bundle args = new Bundle();
+        args.putString(USER_KEY, username);
+
+        AboutUserFragment fragment = new AboutUserFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        username =  getArguments().getString(USER_KEY);
         presenter = ((App) getActivity().getApplication()).getUserSingleListPresenter(username);
     }
 

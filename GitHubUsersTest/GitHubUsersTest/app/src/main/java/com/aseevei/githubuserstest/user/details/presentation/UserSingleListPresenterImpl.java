@@ -1,7 +1,7 @@
-package com.aseevei.githubuserstest.user.list.presentation.singlepresentation;
+package com.aseevei.githubuserstest.user.details.presentation;
 
-import com.aseevei.githubuserstest.user.data.response.UserSingleRepository;
-import com.aseevei.githubuserstest.user.list.view.singleview.UserSingleView;
+import com.aseevei.githubuserstest.user.data.UserRepository;
+import com.aseevei.githubuserstest.user.details.view.UserSingleView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -9,13 +9,13 @@ import io.reactivex.schedulers.Schedulers;
 
 public class UserSingleListPresenterImpl implements UserSingleListPresenter {
 
-    private UserSingleRepository userRepository;
+    private UserRepository userRepository;
     private UserSingleView view;
     private Disposable disposable;
     private UserSingleUIModel userList;
     private String string;
 
-    public UserSingleListPresenterImpl(UserSingleRepository userRepository, String username) {
+    public UserSingleListPresenterImpl(UserRepository userRepository, String username) {
         this.userRepository = userRepository;
         this.string = username;
     }
@@ -50,6 +50,7 @@ public class UserSingleListPresenterImpl implements UserSingleListPresenter {
             disposable.dispose();
         }
     }
+
     @Override
     public void onRetryButtonClicked() {
         view.setRetryButtonVisibility(false);
@@ -62,7 +63,7 @@ public class UserSingleListPresenterImpl implements UserSingleListPresenter {
         }
         disposable = userRepository.getUser(string)
                 // mapping
-                        .map(user -> new UserSingleUIModel(user.getName(), user.getAvatarUrl(), user.getLocation(), user.getEmail(), user.getBlog()))
+                .map(user -> new UserSingleUIModel(user.getName(), user.getAvatarUrl(), user.getLocation(), user.getEmail(), user.getBlog()))
                 // multithreading
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

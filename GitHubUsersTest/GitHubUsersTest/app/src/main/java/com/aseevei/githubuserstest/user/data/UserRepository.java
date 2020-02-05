@@ -8,4 +8,6 @@ public interface UserRepository {
 
     Single<List<User>> getUsers();
 
+    Single<SimpleUser> getUser(String username);
+
 }

@@ -3,22 +3,20 @@ package com.aseevei.githubuserstest.user.database;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
-
-import com.aseevei.githubuserstest.user.data.SimpleUser;
 import com.aseevei.githubuserstest.user.data.User;
+import java.util.List;
 import io.reactivex.Single;
 import static androidx.room.OnConflictStrategy.REPLACE;
 
 @Dao
 public interface UserDao {
 
-    @Query("SELECT * FROM user")
-    Single<SimpleUser> getAll();
+    @Query("SELECT * FROM users")
+    Single<List<User>> getAll();
 
     @Insert(onConflict = REPLACE)
-    void insert(SimpleUser user);
+    void insert(Iterable<User> user);
 
-    @Query("DELETE FROM user")
+    @Query("DELETE FROM users")
     void deleteAll();
-
 }

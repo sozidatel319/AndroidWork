@@ -7,14 +7,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
 import com.aseevei.githubuserstest.user.list.presentation.UserListPresenter;
+import com.aseevei.githubuserstest.user.list.presentation.UserUIModel;
+
 import java.util.List;
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -37,7 +43,7 @@ public class UserListFragment extends Fragment implements UserListView {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = ((App) getActivity().getApplication()).getUserListPresenter();
+        presenter = ((App) Objects.requireNonNull(getActivity()).getApplication()).getUserListPresenter();
     }
 
     @Override
@@ -49,14 +55,13 @@ public class UserListFragment extends Fragment implements UserListView {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
-
         presenter.attachView(this);
 
         return view;
     }
 
     @Override
-    public void showUserList(List userList) {
+    public void showUserList(List<UserUIModel> userList) {
         adapter.addUsers(userList);
     }
 
@@ -85,7 +90,7 @@ public class UserListFragment extends Fragment implements UserListView {
 
     @Override
     public void onDestroy() {
-        if (getActivity().isFinishing()) {
+        if (Objects.requireNonNull(getActivity()).isFinishing()) {
             presenter.onFinishing();
             ((App) getActivity().getApplication()).clearUserListPresenter();
         }

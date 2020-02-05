@@ -1,9 +1,14 @@
 package com.aseevei.githubuserstest.user.data;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Objects;
 
+@Entity(tableName = "users")
 public final class User {
 
+  @PrimaryKey
   private long id;
   private String name;
   private String avatarUrl;

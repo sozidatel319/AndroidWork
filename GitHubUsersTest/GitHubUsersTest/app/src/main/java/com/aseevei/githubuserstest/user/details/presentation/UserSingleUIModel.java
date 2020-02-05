@@ -1,4 +1,4 @@
-package com.aseevei.githubuserstest.user.list.presentation.singlepresentation;
+package com.aseevei.githubuserstest.user.details.presentation;
 
 import java.util.Objects;
 

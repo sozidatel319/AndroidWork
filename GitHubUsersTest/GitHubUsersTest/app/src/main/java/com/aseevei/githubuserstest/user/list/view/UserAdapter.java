@@ -5,17 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.aseevei.githubuserstest.R;
 import com.aseevei.githubuserstest.user.list.presentation.UserUIModel;
-import com.aseevei.githubuserstest.user.list.view.singleview.AboutUserFragment;
+import com.aseevei.githubuserstest.user.details.view.AboutUserFragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private ArrayList<UserUIModel> userList = new ArrayList<>();
     private ChangeView changeView = ViewPresenter.s;
 
@@ -60,10 +63,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             name = itemView.findViewById(R.id.text_name);
             avatar = itemView.findViewById(R.id.image_avatar);
 
-            itemView.setOnClickListener(v -> {
-                String s = name.getText().toString();
-                changeView.changeFragment(new AboutUserFragment(s));
-            });
+            itemView.setOnClickListener(v ->
+                    changeView.changeFragment(AboutUserFragment.newInstance(name.getText().toString())));
         }
     }
 }

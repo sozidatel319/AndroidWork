@@ -1,10 +1,12 @@
 package com.aseevei.githubuserstest.user.list.view;
 
+import com.aseevei.githubuserstest.user.list.presentation.UserUIModel;
+
 import java.util.List;
 
 public interface UserListView {
 
-    void showUserList(List<?> users);
+    void showUserList(List<UserUIModel> users);
 
     void showErrorMessage(String errorMessage);
 

@@ -1,6 +1,6 @@
-package com.aseevei.githubuserstest.user.list.presentation.singlepresentation;
+package com.aseevei.githubuserstest.user.details.presentation;
 
-import com.aseevei.githubuserstest.user.list.view.singleview.UserSingleView;
+import com.aseevei.githubuserstest.user.details.view.UserSingleView;
 
 public interface UserSingleListPresenter {
     void attachView(UserSingleView view);

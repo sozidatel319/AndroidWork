@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aseevei.githubuserstest.user.list.view.UserListFragment;
 import com.aseevei.githubuserstest.user.list.view.ViewPresenter;
-import com.aseevei.githubuserstest.user.list.view.singleview.AboutUserFragment;
 
 public class MainActivity extends AppCompatActivity {
     ViewPresenter viewPresenter = new ViewPresenter(getSupportFragmentManager());
