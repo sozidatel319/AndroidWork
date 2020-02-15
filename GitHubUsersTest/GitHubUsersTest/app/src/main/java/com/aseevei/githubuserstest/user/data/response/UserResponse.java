@@ -18,6 +18,13 @@ public class UserResponse {
     @SerializedName("blog")
     private String blog;
 
+    public UserResponse(long id, String name, String avatarUrl, String webLink) {
+        this.id = id;
+        this.name = name;
+        this.avatarUrl = avatarUrl;
+        this.webLink = webLink;
+    }
+
     public String getLocation() {
         return location;
     }
