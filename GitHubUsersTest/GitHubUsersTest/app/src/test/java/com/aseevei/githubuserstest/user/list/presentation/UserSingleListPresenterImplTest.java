@@ -32,13 +32,13 @@ public class UserSingleListPresenterImplTest {
     UserSingleView view;
     private PublishSubject<SimpleUser> userObservable = PublishSubject.create();
     private UserSingleListPresenterImpl presenter;
-    String name;
+    private String name;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         Mockito.when(repository.getUser(name)).thenReturn(userObservable.firstOrError());
-        presenter = new UserSingleListPresenterImpl(repository);
+        presenter = new UserSingleListPresenterImpl(repository, name);
     }
 
     @Test
