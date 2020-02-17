@@ -1,11 +1,7 @@
 language: android
 jdk: oraclejdk8
 android:
-before_install:
-- ci/install-protoc.sh
 script:
-- ci/create-gradle-wrapper-4.6.sh
-- ci/generate-reactive-plugin.sh
-- sh gradlew assemble testReleaseUnitTest
+- gradlew assemble testReleaseUnitTest
 
 
