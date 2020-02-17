@@ -1,7 +1,7 @@
 language: android
 jdk: oraclejdk8
 android:
-	components:
+components:
 	- platform-tools
 	- tools
 	- build-tools-28.0.3
@@ -9,11 +9,11 @@ android:
 	- extra-android-m2repository
 	- extra-google-google_play_services
 	- extra-google-m2repository
-	licences:
+licences:
 	- android-sdk-preview-license-c81a61d9
 	- android-sdk-license-.+
 	- google-gdk-license-.+
-	script:
+script:
 	- sh gradlew asseble testReleaseUnitTest
 
 
