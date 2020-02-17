@@ -2,6 +2,6 @@ language: android
 jdk: oraclejdk8
 android:
 script:
-- gradlew assemble testReleaseUnitTest
+- ./gradlew -v
 
 
