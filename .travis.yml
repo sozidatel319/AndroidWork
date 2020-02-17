@@ -13,6 +13,8 @@ licences:
 - android-sdk-preview-license-c81a61d9
 - android-sdk-license-.+
 - google-gdk-license-.+
+before_install:
+- ci/install-protoc.sh
 script:
 - ci/create-gradle-wrapper-4.6.sh
 - ci/generate-reactive-plugin.sh
