@@ -14,6 +14,6 @@ licences:
 - android-sdk-license-.+
 - google-gdk-license-.+
 script:
-- sh gradlew asseble testReleaseUnitTest
+- sh gradlew assemble testReleaseUnitTest
 
 
