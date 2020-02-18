@@ -8,7 +8,7 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 @PerApplication
-@Component(modules = { NetworkModule.class, UserModule.class, DatabaseModule.class, AboutUserDatabaseModule.class})
+@Component(modules = { NetworkModule.class, UserModule.class, DatabaseModule.class})
 public interface AppComponent {
 
     UserRepository getUserRepository();
