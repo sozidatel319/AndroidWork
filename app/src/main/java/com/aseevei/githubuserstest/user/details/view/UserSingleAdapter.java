@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class UserSingleAdapter extends RecyclerView.Adapter<UserSingleAdapter.UserViewHolder> {
     private ArrayList<UserSingleUIModel> userList = new ArrayList<>();
-    private ChangeView changeView = ViewPresenter.s;
 
     @NonNull
     @Override
@@ -71,9 +70,6 @@ public class UserSingleAdapter extends RecyclerView.Adapter<UserSingleAdapter.Us
             location = itemView.findViewById(R.id.location);
             email = itemView.findViewById(R.id.email);
             blog = itemView.findViewById(R.id.blog);
-
-            itemView.setOnClickListener(v ->
-                    changeView.changeFragment(AboutUserFragment.newInstance(name.getText().toString())));
         }
     }
 }

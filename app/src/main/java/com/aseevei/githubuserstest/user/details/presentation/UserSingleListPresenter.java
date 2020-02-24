@@ -10,4 +10,7 @@ public interface UserSingleListPresenter {
     void onFinishing();
 
     void onRetryButtonClicked();
+
+    String getName();
+
 }

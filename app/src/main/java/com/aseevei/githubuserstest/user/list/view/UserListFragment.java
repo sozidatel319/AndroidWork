@@ -7,25 +7,24 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
+import com.aseevei.githubuserstest.user.details.view.AboutUserFragment;
 import com.aseevei.githubuserstest.user.list.presentation.UserListPresenter;
 import com.aseevei.githubuserstest.user.list.presentation.UserUIModel;
-
 import java.util.List;
 import java.util.Objects;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class UserListFragment extends Fragment implements UserListView {
+import static com.aseevei.githubuserstest.user.list.view.ViewPresenter.changeView;
+
+public class UserListFragment extends Fragment implements UserListView, OnClickUser {
 
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
@@ -52,6 +51,7 @@ public class UserListFragment extends Fragment implements UserListView {
         unbinder = ButterKnife.bind(this, view);
         retryButton.setOnClickListener(button -> presenter.onRetryButtonClicked());
         adapter = new UserAdapter();
+        adapter.setOnClickUserListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -82,6 +82,11 @@ public class UserListFragment extends Fragment implements UserListView {
     }
 
     @Override
+    public void openUpperScreen(String userName) {
+        changeView.changeFragment(AboutUserFragment.newInstance(userName));
+    }
+
+    @Override
     public void onDestroyView() {
         presenter.detachView();
         unbinder.unbind();
@@ -95,5 +100,10 @@ public class UserListFragment extends Fragment implements UserListView {
             ((App) getActivity().getApplication()).clearUserListPresenter();
         }
         super.onDestroy();
+    }
+
+    @Override
+    public void onClick(UserUIModel userUIModel) {
+    presenter.onClickUser(userUIModel);
     }
 }

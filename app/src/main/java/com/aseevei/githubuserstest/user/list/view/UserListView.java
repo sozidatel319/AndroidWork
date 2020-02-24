@@ -14,4 +14,6 @@ public interface UserListView {
 
     void setRetryButtonVisibility(boolean visible);
 
+    void openUpperScreen(String userName);
+
 }

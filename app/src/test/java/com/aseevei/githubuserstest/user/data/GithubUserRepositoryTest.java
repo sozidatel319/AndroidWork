@@ -76,8 +76,8 @@ public class GithubUserRepositoryTest {
 
     private List<UserResponse> getUsersUiModels() {
         return Arrays.asList(
-                new UserResponse(1, "name", "avatar", "url"),
-                new UserResponse(2, "name2", "avatar", "url")
+                new UserResponse(1, "name", "avatar", "url","Canada","@","@t"),
+                new UserResponse(2, "name2", "avatar", "url","Canada","@","@t")
         );
     }
 }

@@ -12,4 +12,5 @@ public interface UserListPresenter {
 
     void onRetryButtonClicked();
 
+    void onClickUser(UserUIModel userUIModel);
 }

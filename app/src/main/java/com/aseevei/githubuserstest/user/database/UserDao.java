@@ -11,12 +11,12 @@ import static androidx.room.OnConflictStrategy.REPLACE;
 @Dao
 public interface UserDao {
 
-    @Query("SELECT * FROM users")
+    @Query("SELECT * FROM user")
     Single<List<User>> getAll();
 
     @Insert(onConflict = REPLACE)
     void insert(Iterable<User> user);
 
-    @Query("DELETE FROM users")
+    @Query("DELETE FROM user")
     void deleteAll();
 }

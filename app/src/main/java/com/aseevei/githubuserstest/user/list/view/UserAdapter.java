@@ -5,22 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aseevei.githubuserstest.R;
 import com.aseevei.githubuserstest.user.list.presentation.UserUIModel;
-import com.aseevei.githubuserstest.user.details.view.AboutUserFragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private ArrayList<UserUIModel> userList = new ArrayList<>();
-    private ChangeView changeView = ViewPresenter.s;
+    private OnClickUser onClickUser = userUIModel -> {
+
+    };
 
     @NonNull
     @Override
@@ -30,10 +28,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         );
     }
 
+    public void setOnClickUserListener(OnClickUser onClickUser) {
+        this.onClickUser = onClickUser;
+    }
+
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         UserUIModel user = userList.get(position);
         holder.name.setText(user.getName());
+        holder.itemView.setOnClickListener(view -> onClickUser.onClick(userList.get(position)));
         Glide.with(holder.itemView.getContext())
                 .load(user.getAvatar())
                 .apply(RequestOptions.circleCropTransform()
@@ -62,9 +65,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             super(itemView);
             name = itemView.findViewById(R.id.text_name);
             avatar = itemView.findViewById(R.id.image_avatar);
-
-            itemView.setOnClickListener(v ->
-                    changeView.changeFragment(AboutUserFragment.newInstance(name.getText().toString())));
         }
     }
 }

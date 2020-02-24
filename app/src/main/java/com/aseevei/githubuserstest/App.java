@@ -1,6 +1,7 @@
 package com.aseevei.githubuserstest;
 
 import android.app.Application;
+
 import com.aseevei.githubuserstest.di.AppComponent;
 import com.aseevei.githubuserstest.di.DaggerAppComponent;
 import com.aseevei.githubuserstest.user.list.presentation.UserListPresenter;
@@ -26,8 +27,11 @@ public class App extends Application {
 
     public UserSingleListPresenter getUserSingleListPresenter(String username) {
         if (userSingleListPresenter == null) {
-            userSingleListPresenter = new UserSingleListPresenterImpl(component.getUserRepository(), username); // Проверить всё ли правильно тут
+            userSingleListPresenter = new UserSingleListPresenterImpl(component.getUserRepository(), username);
+        } else if (!username.equals(userSingleListPresenter.getName())){
+            userSingleListPresenter = new UserSingleListPresenterImpl(component.getUserRepository(), username);
         }
+
         return userSingleListPresenter;
     }
 

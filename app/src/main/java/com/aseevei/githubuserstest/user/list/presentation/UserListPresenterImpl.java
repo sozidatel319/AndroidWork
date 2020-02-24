@@ -2,9 +2,7 @@ package com.aseevei.githubuserstest.user.list.presentation;
 
 import com.aseevei.githubuserstest.user.data.UserRepository;
 import com.aseevei.githubuserstest.user.list.view.UserListView;
-
 import java.util.List;
-
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -52,6 +50,11 @@ public class UserListPresenterImpl implements UserListPresenter {
     public void onRetryButtonClicked() {
         view.setRetryButtonVisibility(false);
         loadUsers();
+    }
+
+    @Override
+    public void onClickUser(UserUIModel userUIModel) {
+        view.openUpperScreen(userUIModel.getName());
     }
 
     private void loadUsers() {

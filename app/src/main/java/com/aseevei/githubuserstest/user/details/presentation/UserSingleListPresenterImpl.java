@@ -2,7 +2,6 @@ package com.aseevei.githubuserstest.user.details.presentation;
 
 import com.aseevei.githubuserstest.user.data.UserRepository;
 import com.aseevei.githubuserstest.user.details.view.UserSingleView;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -13,15 +12,16 @@ public class UserSingleListPresenterImpl implements UserSingleListPresenter {
     private UserSingleView view;
     private Disposable disposable;
     private UserSingleUIModel userList;
-    private String string;
+    private String username;
 
     public UserSingleListPresenterImpl(UserRepository userRepository, String username) {
         this.userRepository = userRepository;
-        this.string = username;
+        this.username = username;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    @Override
+    public String getName() {
+        return username;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class UserSingleListPresenterImpl implements UserSingleListPresenter {
         if (isLoading()) {
             throw new RuntimeException("User loading is already in progress");
         }
-        disposable = userRepository.getUser(string)
+        disposable = userRepository.getUser(username)
                 // mapping
                 .map(user -> new UserSingleUIModel(user.getName(), user.getAvatarUrl(), user.getLocation(), user.getEmail(), user.getBlog()))
                 // multithreading

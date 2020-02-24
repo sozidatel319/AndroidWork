@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_about_user"
         android:name="com.aseevei.githubuserstest.user.details.view.AboutUserFragment"
         android:layout_width="match_parent"

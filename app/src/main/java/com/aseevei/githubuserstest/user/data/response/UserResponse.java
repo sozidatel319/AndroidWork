@@ -11,30 +11,12 @@ public class UserResponse {
     private String avatarUrl;
     @SerializedName("url")
     private String webLink;
-    @SerializedName("location")
-    private String location;
-    @SerializedName("email")
-    private String email;
-    @SerializedName("blog")
-    private String blog;
 
-    public UserResponse(long id, String name, String avatarUrl, String webLink) {
+    public UserResponse(long id, String name, String avatarUrl, String webLink){
         this.id = id;
         this.name = name;
         this.avatarUrl = avatarUrl;
         this.webLink = webLink;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getBlog() {
-        return blog;
     }
 
     public String getName() {

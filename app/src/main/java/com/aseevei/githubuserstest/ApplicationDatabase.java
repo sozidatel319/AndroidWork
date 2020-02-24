@@ -2,7 +2,6 @@ package com.aseevei.githubuserstest;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
-
 import com.aseevei.githubuserstest.user.data.SimpleUser;
 import com.aseevei.githubuserstest.user.data.User;
 import com.aseevei.githubuserstest.user.database.AboutUserDao;

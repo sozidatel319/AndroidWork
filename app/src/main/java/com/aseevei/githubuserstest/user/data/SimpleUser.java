@@ -3,7 +3,8 @@ package com.aseevei.githubuserstest.user.data;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "user")
+import java.util.Objects;
+@Entity
 public class SimpleUser {
     @PrimaryKey
     private long id;
@@ -13,9 +14,6 @@ public class SimpleUser {
     private String location;
     private String email;
     private String blog;
-    public long getId() {
-        return id;
-    }
 
     public SimpleUser(long id, String name, String avatarUrl, String webLink, String location, String email, String blog) {
         this.id = id;
@@ -25,6 +23,10 @@ public class SimpleUser {
         this.location = location;
         this.email = email;
         this.blog = blog;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {
@@ -49,6 +51,20 @@ public class SimpleUser {
 
     public String getBlog() {
         return blog;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SimpleUser user = (SimpleUser) o;
+        return id == user.id &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(avatarUrl, user.avatarUrl) &&
+                Objects.equals(webLink, user.webLink) &&
+                Objects.equals(location, user.location) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(blog, user.blog);
     }
 
 

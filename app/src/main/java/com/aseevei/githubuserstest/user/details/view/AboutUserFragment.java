@@ -7,17 +7,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aseevei.githubuserstest.App;
 import com.aseevei.githubuserstest.R;
 import com.aseevei.githubuserstest.user.details.presentation.UserSingleListPresenter;
 import com.aseevei.githubuserstest.user.details.presentation.UserSingleUIModel;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -66,7 +63,6 @@ public class AboutUserFragment extends Fragment implements UserSingleView {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
-
         presenter.attachView(this);
 
         return view;
