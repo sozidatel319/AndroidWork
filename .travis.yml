@@ -1,0 +1,9 @@
+language: android
+jdk: oraclejdk8
+android:
+before_install:
+ - chmod +x gradlew
+script:
+- sh gradle assemble testReleaseUnitTest
+
+
